@@ -56,7 +56,7 @@ This prototype focuses on building the **game systems and flow** first (UI, shop
 
 ---
 
-## Demo (Silent Preview)
+## Demo 
 
 ![Demo 1](https://raw.githubusercontent.com/heathercoyne/Purrithmetic/main/media/gif1.gif)
 ![Demo 2](https://raw.githubusercontent.com/heathercoyne/Purrithmetic/main/media/gif2.gif)
@@ -96,6 +96,7 @@ All **sprites and UI artwork were created by me** specifically for this project.
 ## Author
 
 Heather Xin Coyne
+
 
 
 
