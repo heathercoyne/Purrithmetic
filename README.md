@@ -88,3 +88,4 @@ This prototype focuses on building the **game systems and flow** first (UI, shop
 
 ## Art & Assets
 All art and visual assets in this repository were created by me.
+
