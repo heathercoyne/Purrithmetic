@@ -87,7 +87,15 @@ This prototype focuses on building the **game systems and flow** first (UI, shop
 
 ---
 
-## Art & Assets
-All art and visual assets in this repository were created by me.
+## Assets
+
+All **sprites and UI artwork were created by me** specifically for this project.
+
+---
+
+## Author
+
+Heather Xin Coyne
+
 
 
