@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0qobpl3qybrm"]
+
+[ext_resource type="Script" uid="uid://7abpvd3hqxei" path="res://scripts/ui/Store.gd" id="1_0gaef"]
+[ext_resource type="Texture2D" uid="uid://c21oasgplqajc" path="res://assets/ui/icons/back.png" id="2_7v1h2"]
+
+[sub_resource type="Theme" id="Theme_708oo"]
+default_font_size = 34
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0gaef"]
+
+[sub_resource type="SystemFont" id="SystemFont_0gaef"]
+
+[sub_resource type="Theme" id="Theme_7v1h2"]
+default_font = SubResource("SystemFont_0gaef")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_708oo"]
+bg_color = Color(0.69113696, 0.5593581, 0.59982914, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.038397167, 0.038397167, 0.03839716, 0.6)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd4rq"]
+bg_color = Color(0.8765116, 0.7851985, 0.8237747, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m06uj"]
+bg_color = Color(0.8784314, 0.78431374, 0.8235294, 1)
+border_color = Color(0.827451, 0.7137255, 0.89411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1kl2"]
+bg_color = Color(0.8168298, 0.49018288, 0.5525314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+shadow_size = 1
+
+[node name="Store" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_708oo")
+script = ExtResource("1_0gaef")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.596591, 0.60352904, 0.62021106, 1)
+self_modulate = Color(0.90588236, 0.89411765, 0.92941177, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_0gaef")
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Main" type="VBoxContainer" parent="SafeArea"]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="SafeArea/Main"]
+layout_mode = 2
+theme = SubResource("Theme_7v1h2")
+theme_override_constants/separation = 3
+
+[node name="ShopBack" type="Button" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("2_7v1h2")
+
+[node name="TitleLabel" type="Label" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "                        SHOP                           "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopCoinsLabel" type="Label" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Coins: "
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SafeArea/Main"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopFrame" type="PanelContainer" parent="SafeArea/Main/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_708oo")
+
+[node name="ShopPadding" type="MarginContainer" parent="SafeArea/Main/MarginContainer/ShopFrame"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TabContainer" type="TabContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 20
+theme_override_constants/tab_separation = 0
+theme_override_constants/icon_separation = 2
+theme_override_constants/icon_max_width = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/panel = SubResource("StyleBoxFlat_wd4rq")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_m06uj")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_s1kl2")
+current_tab = 0
+
+[node name="BodyTab" type="ScrollContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding/TabContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ShopBodyGrid" type="GridContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding/TabContainer/BodyTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="OutfitTab" type="ScrollContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ShopOutfitGrid" type="GridContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding/TabContainer/OutfitTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="HatTab" type="ScrollContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="ShopHatGrid" type="GridContainer" parent="SafeArea/Main/MarginContainer/ShopFrame/ShopPadding/TabContainer/HatTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="BuyConfirm" type="AcceptDialog" parent="."]
+
+[node name="WarnPopup" type="AcceptDialog" parent="."]

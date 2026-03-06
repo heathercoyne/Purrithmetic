@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=3 uid="uid://8w21ok6rrfso"]
+
+[ext_resource type="Script" uid="uid://cko66nwmdgj3d" path="res://scripts/ui/Minigame.gd" id="1_1cvyt"]
+[ext_resource type="Texture2D" uid="uid://c21oasgplqajc" path="res://assets/ui/icons/back.png" id="2_cxrgl"]
+
+[sub_resource type="Theme" id="Theme_rmi08"]
+default_font_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxrgl"]
+bg_color = Color(0.8784314, 0.78431374, 0.8235294, 1)
+shadow_color = Color(0.883793, 0.5048258, 0.80351657, 0.59607846)
+shadow_size = 10
+
+[node name="Minigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_rmi08")
+script = ExtResource("1_1cvyt")
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0192771, 1)
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Main" type="VBoxContainer" parent="SafeArea"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TopBar" type="HBoxContainer" parent="SafeArea/Main"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+icon = ExtResource("2_cxrgl")
+
+[node name="Spacer" type="Control" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+
+[node name="Middle" type="VBoxContainer" parent="SafeArea/Main"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="SpacerTop" type="Control" parent="SafeArea/Main/Middle"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="QuestionPanel" type="Panel" parent="SafeArea/Main/Middle/SpacerTop"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 980.0
+offset_bottom = 4.0
+size_flags_vertical = 3
+
+[node name="QuestionLabel" type="Label" parent="SafeArea/Main/Middle/SpacerTop/QuestionPanel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="SafeArea/Main/Middle"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="AnswerPanel" type="PanelContainer" parent="SafeArea/Main/Middle/Control"]
+layout_mode = 0
+offset_left = -12.718677
+offset_top = 141.0
+offset_right = 967.2813
+offset_bottom = 210.0
+size_flags_vertical = 4
+
+[node name="AnswerLabel" type="Label" parent="SafeArea/Main/Middle/Control/AnswerPanel"]
+layout_mode = 2
+
+[node name="FeedbackLabel" type="Label" parent="SafeArea/Main/Middle"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Keypad" type="GridContainer" parent="SafeArea/Main"]
+layout_mode = 2
+
+[node name="NumPad" type="GridContainer" parent="SafeArea/Main/Keypad"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="SidePad" type="VBoxContainer" parent="SafeArea/Main/Keypad"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnterButton" type="Button" parent="SafeArea/Main/Keypad/SidePad"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Enter"
+
+[node name="ModePanel" type="PanelContainer" parent="SafeArea"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cxrgl")
+
+[node name="ModeVBox" type="VBoxContainer" parent="SafeArea/ModePanel"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ModeTitle" type="Label" parent="SafeArea/ModePanel/ModeVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Choose a Mode"
+
+[node name="AddBtn" type="Button" parent="SafeArea/ModePanel/ModeVBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Addition"
+
+[node name="SubBtn" type="Button" parent="SafeArea/ModePanel/ModeVBox"]
+layout_mode = 2
+text = "Subtraction"
+
+[node name="MulBtn" type="Button" parent="SafeArea/ModePanel/ModeVBox"]
+layout_mode = 2
+text = "Multiplcation"
+
+[node name="DivBtn" type="Button" parent="SafeArea/ModePanel/ModeVBox"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Division"

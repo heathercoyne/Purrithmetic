@@ -1,0 +1,13 @@
+# Godot 4
+.godot/
+.import/
+export_presets.cfg
+*.tmp
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# Optional: logs
+*.log

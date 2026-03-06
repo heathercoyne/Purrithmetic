@@ -1,0 +1,166 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr3skbi8py5vw"]
+
+[ext_resource type="Script" uid="uid://hguqf0yludk7" path="res://scripts/ui/Customization.gd" id="1_edjy3"]
+[ext_resource type="PackedScene" uid="uid://bembuor63rkyp" path="res://scenes/avatars/CatAvatar.tscn" id="2_edjy3"]
+[ext_resource type="Texture2D" uid="uid://c21oasgplqajc" path="res://assets/ui/icons/back.png" id="2_tu8rs"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tu8rs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edjy3"]
+
+[node name="Customization" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_edjy3")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.59607846, 0.6039216, 0.61960787, 1)
+self_modulate = Color(0.90588236, 0.89411765, 0.92941177, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_tu8rs")
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Main" type="VBoxContainer" parent="SafeArea"]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="SafeArea/Main"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("2_tu8rs")
+
+[node name="TitleLabel" type="Label" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+text = "Customize"
+
+[node name="ConfirmButton" type="Button" parent="SafeArea/Main/TopBar"]
+layout_mode = 2
+text = "Save"
+
+[node name="PreviewArea" type="Panel" parent="SafeArea/Main"]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_edjy3")
+
+[node name="Center" type="CenterContainer" parent="SafeArea/Main/PreviewArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9311175, 0.987758)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SafeArea/Main/PreviewArea/Center"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SafeArea/Main/PreviewArea/Center/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(600, 600)
+render_target_update_mode = 4
+
+[node name="PreviewRoot" type="Node2D" parent="SafeArea/Main/PreviewArea/Center/SubViewportContainer/SubViewport"]
+position = Vector2(9, 82)
+scale = Vector2(0.75, 0.75)
+
+[node name="CatAvatar" parent="SafeArea/Main/PreviewArea/Center/SubViewportContainer/SubViewport/PreviewRoot" instance=ExtResource("2_edjy3")]
+position = Vector2(389.33334, 281.3333)
+
+[node name="Options" type="TabContainer" parent="SafeArea/Main/PreviewArea"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1470001
+offset_left = -8.0
+offset_top = 837.0
+offset_right = -8.0
+offset_bottom = 704.69995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0021498)
+current_tab = 0
+
+[node name="FurTab" type="Control" parent="SafeArea/Main/PreviewArea/Options"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="FurScroll" type="ScrollContainer" parent="SafeArea/Main/PreviewArea/Options/FurTab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FurGrid" type="GridContainer" parent="SafeArea/Main/PreviewArea/Options/FurTab/FurScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="OutfitTab" type="Control" parent="SafeArea/Main/PreviewArea/Options"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="OutfitScroll" type="ScrollContainer" parent="SafeArea/Main/PreviewArea/Options/OutfitTab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OutfitGrid" type="GridContainer" parent="SafeArea/Main/PreviewArea/Options/OutfitTab/OutfitScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="HatTab" type="Control" parent="SafeArea/Main/PreviewArea/Options"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HatScroll" type="ScrollContainer" parent="SafeArea/Main/PreviewArea/Options/HatTab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HatGrid" type="GridContainer" parent="SafeArea/Main/PreviewArea/Options/HatTab/HatScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4

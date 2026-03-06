@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bembuor63rkyp"]
+
+[ext_resource type="Script" uid="uid://dwgo1m8hx55cv" path="res://scripts/avatars/CatAvatar.gd" id="1_4fbru"]
+[ext_resource type="Texture2D" uid="uid://ovcupobglvsx" path="res://assets/cat/body/body_base.png" id="2_kyset"]
+
+[node name="CatAvatar" type="Node2D"]
+script = ExtResource("1_4fbru")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_kyset")
+
+[node name="Outfit" type="Sprite2D" parent="."]
+
+[node name="Hat" type="Sprite2D" parent="."]
