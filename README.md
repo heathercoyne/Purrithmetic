@@ -57,9 +57,10 @@ This prototype focuses on building the **game systems and flow** first (UI, shop
 ---
 
 ## Demo (Silent Preview)
-<img width="800" height="466" alt="image" src="https://github.com/user-attachments/assets/350e989d-7b57-4b19-81a5-bdcc4985a204" />
-<img width="800" height="466" alt="image" src="https://github.com/user-attachments/assets/bf657e43-1610-48d6-99f1-1aa2351fef3d" />
-<img width="800" height="466" alt="image" src="https://github.com/user-attachments/assets/09520396-a7f1-4893-9d23-59b72b81e552" />
+
+![Demo 1](https://raw.githubusercontent.com/heathercoyne/Purrithmetic/main/media/gif1.gif)
+![Demo 2](https://raw.githubusercontent.com/heathercoyne/Purrithmetic/main/media/gif2.gif)
+![Demo 3](https://raw.githubusercontent.com/heathercoyne/Purrithmetic/main/media/gif3.gif)
 
 ---
 
@@ -88,4 +89,5 @@ This prototype focuses on building the **game systems and flow** first (UI, shop
 
 ## Art & Assets
 All art and visual assets in this repository were created by me.
+
 
